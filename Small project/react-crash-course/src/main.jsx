@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Posts from "./routes/Posts.jsx";
+import Posts, { loader as postsLoader } from "./routes/Posts.jsx";
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import NewPost from "./routes/NewPost.jsx";
@@ -13,7 +13,8 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Posts />,
+        element: <Posts />, //the router waits for the loader to finish before loading the element
+        loader: postsLoader,
         children: [{ path: "/create-post", element: <NewPost></NewPost> }],
       },
       ,
