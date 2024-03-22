@@ -5,6 +5,7 @@ import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import NewPost from "./routes/NewPost.jsx";
 import RootLayout from "./routes/RootLayout.jsx";
+import { action as newPostAction } from "./routes/NewPost.jsx";
 
 const router = createBrowserRouter([
   {
@@ -15,7 +16,13 @@ const router = createBrowserRouter([
         path: "/",
         element: <Posts />, //the router waits for the loader to finish before loading the element
         loader: postsLoader,
-        children: [{ path: "/create-post", element: <NewPost></NewPost> }],
+        children: [
+          {
+            path: "/create-post",
+            element: <NewPost></NewPost>,
+            action: newPostAction,
+          },
+        ],
       },
       ,
     ],
