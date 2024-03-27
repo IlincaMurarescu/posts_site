@@ -26,17 +26,14 @@ const router = createBrowserRouter([
             action: newPostAction,
           },
           {
-            path: "/:id",
+            path: "/:postId",
             element: <PostDetails />,
             loader: postDetailsLoader,
           },
         ],
       },
-      ,
     ],
   },
-
-  {},
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

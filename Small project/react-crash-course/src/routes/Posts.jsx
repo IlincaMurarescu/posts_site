@@ -1,10 +1,10 @@
-import ListPosts from "../components/ListPosts";
 import { Outlet } from "react-router-dom";
+import ListPosts from "../components/ListPosts";
 
 function Posts() {
   return (
     <>
-      <Outlet></Outlet>
+      <Outlet />
       <main>
         <ListPosts />
       </main>

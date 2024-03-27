@@ -12,7 +12,7 @@ function Modal(props) {
     <>
       <div className={classes.backdrop} onClick={closeHandler} />
       <dialog open className={classes.modal}>
-        {" "}
+        {/* {" "} */}
         {props.children}
       </dialog>
     </>
