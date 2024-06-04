@@ -36,8 +36,8 @@ export default PostDetails;
 export async function loader({ params }) {
   let id = params.postId;
   const response = await fetch("http://localhost:8085/posts/" + id);
-  console.log("params id is: ", params);
   const resData = await response.json();
+  console.log("params id is: ", params);
   console.log("data is ", resData.post);
   return resData.post;
 }
